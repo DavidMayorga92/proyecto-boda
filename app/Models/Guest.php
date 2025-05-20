@@ -12,6 +12,9 @@ class Guest extends Model
     'companions',
     'status',
     'notes',
+    'side',
+    'child_companions',
+    'adult_companions',
     ];
 
 }

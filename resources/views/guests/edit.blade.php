@@ -18,8 +18,21 @@
     </div>
 
     <div class="mb-3">
-        <label class="form-label">Acompañantes</label>
-        <input type="number" name="companions" class="form-control" value="{{ $guest->companions }}">
+        <label class="form-label">Lado</label>
+        <select name="side" class="form-select" required>
+            <option value="novio" {{ old('side', $guest->side) == 'novio' ? 'selected' : '' }}>Novio</option>
+            <option value="novia" {{ old('side', $guest->side) == 'novia' ? 'selected' : '' }}>Novia</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Acompañantes adultos</label>
+        <input type="number" name="adult_companions" class="form-control" value="{{ old('adult_companions', $guest->adult_companions ?? 0) }}">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Acompañantes niños</label>
+        <input type="number" name="child_companions" class="form-control" value="{{ old('child_companions', $guest->child_companions ?? 0) }}">
     </div>
 
     <div class="mb-3">
